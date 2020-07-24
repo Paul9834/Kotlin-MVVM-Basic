@@ -1,4 +1,4 @@
-package com.paul9834.learn_kotlin.other
+package com.paul9834.learn_kotlin.Utils
 
 class Constants {
     companion object {

@@ -1,6 +1,5 @@
-package com.paul9834.learn_kotlin.data.repo
+package com.paul9834.learn_kotlin.model
 
-import com.paul9834.learn_kotlin.model.FruitResponse
 import com.paul9834.learn_kotlin.model.api.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback

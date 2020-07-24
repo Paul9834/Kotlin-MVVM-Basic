@@ -2,7 +2,7 @@ package com.paul9834.learn_kotlin.model.api
 
 import com.google.gson.GsonBuilder
 import com.paul9834.learn_kotlin.BuildConfig.DEBUG
-import com.paul9834.learn_kotlin.other.Constants.Companion.REQUEST_TIMEOUT_DURATION
+import com.paul9834.learn_kotlin.Utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
