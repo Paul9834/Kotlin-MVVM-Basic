@@ -13,7 +13,7 @@ class FrutasRepository {
 
     fun searchFruits(): LiveData<List<Fruit>> {
 
-        val call : Call<List<Fruit>> = RetrofitClient.getClient.getFeed()
+        val call : Call<List<Fruit>> = RetrofitClient.getClient.getFruits()
         call.enqueue(object : Callback<List<Fruit>>{
 
             override fun onFailure(call: Call<List<Fruit>>, t: Throwable) {

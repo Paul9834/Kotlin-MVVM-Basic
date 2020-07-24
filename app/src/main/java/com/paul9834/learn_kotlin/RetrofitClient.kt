@@ -1,6 +1,6 @@
 package com.paul9834.learn_kotlin
 
-import Controllers.Endpoint
+import com.paul9834.learn_kotlin.endpoints.Endpoint
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
