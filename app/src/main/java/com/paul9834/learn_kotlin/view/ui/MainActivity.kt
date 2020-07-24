@@ -1,4 +1,4 @@
-package com.paul9834.learn_kotlin.ui
+package com.paul9834.learn_kotlin.view.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -7,24 +7,27 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.paul9834.learn_kotlin.R
 import com.paul9834.learn_kotlin.model.Fruit
-import com.paul9834.learn_kotlin.viewmodel.MainViewModel
+import com.paul9834.learn_kotlin.view.repolist.RepoListViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: RepoListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(RepoListViewModel::class.java)
 
         val frutasObserver = Observer<List<Fruit>> {
             Log.d("Lista de Frutas", it.toString())
+
         }
 
-        viewModel.getListaFrutasLiveData()?.observe(this, frutasObserver)
+        viewModel.repoListLive.observe(this, frutasObserver)
+
+        viewModel.fetchRepoList()
 
     }
 
