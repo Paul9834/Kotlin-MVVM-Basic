@@ -1,27 +1,37 @@
 package com.paul9834.learn_kotlin.viewmodel
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.paul9834.learn_kotlin.data.FrutasRepository
 import com.paul9834.learn_kotlin.domain.FrutasUseCase
-import com.paul9834.learn_kotlin.ui.modelo.Frutas
+import com.paul9834.learn_kotlin.model.Fruit
 
 class MainViewModel : ViewModel() {
 
-    private val listData = MutableLiveData<List<Frutas>>()
+    // Lista de datos de frutas //
+
+    var data_response: LiveData<List<Fruit>>? = null
+
+    // Casos de uso de Frutas //
+
     val frutasUseCase = FrutasUseCase()
 
+    init {
+        getListFrutas()
+    }
+    // Ingresa la información de las frutas //
 
-    fun setInformacion (frutas : List<Frutas>) {
-        listData.value = frutas
+    fun setInformacion (frutas : LiveData<List<Fruit>>) {
+        data_response = frutas
     }
 
+    // Obtiene la lista de frutas //
     fun getListFrutas () {
         setInformacion(frutasUseCase.obtenerListadeFrutas())
     }
 
-
-
-
+    // Retorna la lista de frutas //
+    fun getListaFrutasLiveData (): LiveData<List<Fruit>>? {
+        return data_response
+    }
 
 }
